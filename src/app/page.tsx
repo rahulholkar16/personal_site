@@ -4,7 +4,14 @@ import Image from "next/image";
 import profileImg from "@/../public/profile.jpg";
 import { ProjectItem } from "@/components/project-item";
 import { SectionLabel } from "@/components/section-label";
-import { ACHIEVEMENTS, CV_SKILLS, PROJECTS, SITE } from "@/lib/constants";
+import { SocialIcon } from "@/components/social-icon";
+import {
+    ACHIEVEMENTS,
+    CV_SKILLS,
+    PROJECTS,
+    SITE,
+    SOCIALS,
+} from "@/lib/constants";
 
 export const metadata: Metadata = {
     title: SITE.title,
@@ -110,17 +117,25 @@ export default function HomePage() {
                             <span className="hidden sm:inline text-(--color-border)">
                                 /
                             </span>
-                            <a
-                                href="https://linkedin.com/in/rahulpal01"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group inline-flex items-baseline gap-1.5 font-mono text-sm tracking-wide text-(--color-text-muted) hover:text-(--color-text) transition-colors"
-                            >
-                                <span>LinkedIn</span>
-                                <span className="text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                                    ↗
-                                </span>
-                            </a>
+                            {SOCIALS.map((social) => (
+                                <a
+                                    key={social.name}
+                                    href={social.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group inline-flex items-center gap-1.5 font-mono text-sm tracking-wide text-(--color-text-muted) hover:text-(--color-text) transition-colors"
+                                    aria-label={social.label}
+                                >
+                                    <SocialIcon
+                                        name={social.name}
+                                        className="h-3.5 w-3.5 opacity-70 transition-opacity group-hover:opacity-100"
+                                    />
+                                    <span>{social.name}</span>
+                                    <span className="text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                                        ↗
+                                    </span>
+                                </a>
+                            ))}
                             <Link
                                 href="/cv"
                                 className="group inline-flex items-baseline gap-1.5 font-mono text-sm tracking-wide text-(--color-text-muted) hover:text-(--color-text) transition-colors"

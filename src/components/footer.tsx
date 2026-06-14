@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { SITE, SOCIALS } from "@/lib/constants"
+import { SocialIcon } from "@/components/social-icon"
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -32,7 +33,13 @@ export function Footer() {
                 className="text-xs font-mono uppercase tracking-wider text-(--color-text-muted) hover:text-(--color-text) transition-colors"
                 aria-label={social.label}
               >
-                {social.name}
+                <span className="inline-flex items-center gap-1.5">
+                  <SocialIcon
+                    name={social.name}
+                    className="h-3.5 w-3.5 opacity-70 transition-opacity"
+                  />
+                  <span>{social.name}</span>
+                </span>
               </a>
             ))}
             <Link
