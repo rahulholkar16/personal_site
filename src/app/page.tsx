@@ -48,9 +48,9 @@ export default function HomePage() {
         LangChain: "https://cdn.simpleicons.org/langchain",
         LangGraph: "https://cdn.simpleicons.org/langchain",
         RAG: "https://cdn.simpleicons.org/googlegemini",
-        "Vector Databases": "https://cdn.simpleicons.org/pinecone",
-        "Agentic AI": "https://cdn.simpleicons.org/openai",
-        Pinecone: "https://cdn.simpleicons.org/pinecone",
+        "Vector Databases": "https://cdn.simpleicons.org/pino",
+        "Agentic AI": "https://cdn.simpleicons.org/openaigym",
+        Pinecone: "https://cdn.simpleicons.org/pino",
     };
 
     return (
