@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import profileImg from "@/../public/profile.jpg";
 import { ProjectItem } from "@/components/project-item";
 import { SectionLabel } from "@/components/section-label";
-import { PROJECTS, SITE } from "@/lib/constants";
+import { ACHIEVEMENTS, CV_SKILLS, PROJECTS, SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
     title: SITE.title,
@@ -23,7 +22,6 @@ const inlineLinkClass =
     "text-(--color-text) underline underline-offset-4 decoration-(--color-border) hover:decoration-(--color-accent) transition-colors";
 
 export default function HomePage() {
-
     const techIcons: Record<string, string> = {
         TypeScript: "https://cdn.simpleicons.org/typescript",
         JavaScript: "https://cdn.simpleicons.org/javascript",
@@ -47,8 +45,14 @@ export default function HomePage() {
         Git: "https://cdn.simpleicons.org/git",
         GitHub: "https://cdn.simpleicons.org/github/000000/ffffff",
         Docker: "https://cdn.simpleicons.org/docker",
+        LangChain: "https://cdn.simpleicons.org/langchain",
+        LangGraph: "https://cdn.simpleicons.org/langchain",
+        RAG: "https://cdn.simpleicons.org/googlegemini",
+        "Vector Databases": "https://cdn.simpleicons.org/pinecone",
+        "Agentic AI": "https://cdn.simpleicons.org/openai",
+        Pinecone: "https://cdn.simpleicons.org/pinecone",
     };
-    
+
     return (
         <div className="relative z-10">
             {/* Hero */}
@@ -64,7 +68,7 @@ export default function HomePage() {
 
                         <h1 className="fade-up delay-2 display text-5xl sm:text-6xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight mb-6">
                             <span className="display-italic text-(--color-text-secondary)">
-                                Full Stack
+                                Full Stack AI
                             </span>
                             <br />
                             Developer
@@ -185,13 +189,14 @@ export default function HomePage() {
                             textbooks. I started teaching myself JavaScript,
                             fell in love with building things, and never looked
                             back. Since then I&apos;ve built full-stack SaaS
-                            products, LMS backends, coding platforms, and AI
-                            tools — all from scratch.
+                            products, LMS backends, coding platforms, and
+                            agentic AI tools — all from scratch.
                         </p>
                         <p>
                             Today I reach for{" "}
                             <span className="display-italic text-(--color-text)">
-                                Next.Js, React, TypeScript, Tailwind, and Postgres
+                                Next.js, React, TypeScript, Tailwind, FastAPI,
+                                and Postgres
                             </span>{" "}
                             when I build. I love the entire stack — from
                             designing schemas to crafting responsive UIs that
@@ -201,7 +206,16 @@ export default function HomePage() {
                             Outside of class, I lead hackathon teams, contribute
                             to open source, and present technical projects to
                             academic panels. I&apos;m always building something
-                            — whether it&apos;s a{" "}
+                            — whether it&apos;s an{" "}
+                            <a
+                                href="https://repo-mind-rose.vercel.app/dashboard"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={inlineLinkClass}
+                            >
+                                AI repository analysis system
+                            </a>{" "}
+                            or a{" "}
                             <a
                                 href="https://github.com/rahulholkar16/Code-Master"
                                 target="_blank"
@@ -209,15 +223,6 @@ export default function HomePage() {
                                 className={inlineLinkClass}
                             >
                                 competitive coding platform
-                            </a>{" "}
-                            or an{" "}
-                            <a
-                                href="https://ai-quiz-frontend-red.vercel.app/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={inlineLinkClass}
-                            >
-                                AI quiz app
                             </a>
                             .
                         </p>
@@ -246,65 +251,14 @@ export default function HomePage() {
             <section className="max-w-5xl mx-auto px-6 py-16 sm:py-20">
                 <SectionLabel number="03">Tech Stack</SectionLabel>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    {[
-                        {
-                            label: "Languages",
-                            items: [
-                                "TypeScript",
-                                "JavaScript",
-                                "Java",
-                                "Python",
-                            ],
-                            icon: "{ }",
-                        },
-                        {
-                            label: "Frontend",
-                            items: [
-                                "Next.js",
-                                "React.js",
-                                "Tailwind CSS",
-                                "Shadcn UI",
-                            ],
-                            icon: "◻",
-                        },
-                        {
-                            label: "Backend",
-                            items: [
-                                "Node.js",
-                                "Express.js",
-                                "FastAPI",
-                                "REST APIs",
-                            ],
-                            icon: "⚙",
-                        },
-                        {
-                            label: "Databases",
-                            items: [
-                                "PostgreSQL",
-                                "MongoDB",
-                                "Redis",
-                                "Prisma ORM",
-                            ],
-                            icon: "◈",
-                        },
-                        {
-                            label: "State & Validation",
-                            items: ["Zustand", "Zod", "TanStack Query"],
-                            icon: "◎",
-                        },
-                        {
-                            label: "Dev Tools",
-                            items: ["Git", "GitHub", "Docker"],
-                            icon: "△",
-                        },
-                    ].map((group) => (
+                    {CV_SKILLS.map((group) => (
                         <div
                             key={group.label}
                             className="p-5 border border-(--color-border) rounded-xl bg-(--color-surface) hover:border-(--color-accent) transition duration-200 ease-out transform hover:scale-105 group"
                         >
                             <div className="flex items-center gap-3 mb-4">
                                 <span className="font-mono text-lg text-(--color-accent)">
-                                    {group.icon}
+                                    {group.label.slice(0, 2)}
                                 </span>
                                 <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-(--color-text-muted)">
                                     {group.label}
@@ -318,9 +272,12 @@ export default function HomePage() {
                                     >
                                         <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-(--color-border) bg-(--color-surface)">
                                             {techIcons[item] ? (
-                                                <img
+                                                <Image
                                                     src={techIcons[item]}
                                                     alt={item}
+                                                    width={14}
+                                                    height={14}
+                                                    unoptimized
                                                     className="h-3.5 w-3.5"
                                                 />
                                             ) : (
@@ -342,23 +299,7 @@ export default function HomePage() {
             <section className="max-w-5xl mx-auto px-6 py-16 sm:py-20">
                 <SectionLabel number="04">Achievements</SectionLabel>
                 <div className="space-y-6">
-                    {[
-                        {
-                            title: "Hackathon Team Lead (SIH)",
-                            description:
-                                "Led cross-functional teams in the Smart India Hackathon, driving product ideation, technical execution, and live demos under time-constrained environments.",
-                        },
-                        {
-                            title: "Open Source Contributor",
-                            description:
-                                "Actively contribute to open-source repositories on GitHub, aligning with industry best practices.",
-                        },
-                        {
-                            title: "Public Speaker",
-                            description:
-                                "Presented technical projects and architecture decisions to academic panels and peer audiences.",
-                        },
-                    ].map((achievement, i) => (
+                    {ACHIEVEMENTS.map((achievement, i) => (
                         <div
                             key={achievement.title}
                             className="grid grid-cols-[auto_1fr] gap-6 items-start py-5 border-b border-(--color-border) last:border-0"

@@ -1,8 +1,8 @@
 export const SITE = {
   name: "rahulpal.dev",
-  title: "Rahul Pal — Full Stack Developer",
+  title: "Rahul Pal — Full Stack AI Developer",
   description:
-    "Full Stack Developer building scalable web apps with Next.js, React, TypeScript, and Node.js. Self-taught, endlessly curious, always shipping.",
+    "Full Stack AI Developer building scalable web apps and agentic AI products with Next.js, React, TypeScript, Node.js, and Python.",
   url: "https://rahulpal.dev",
   email: "dev.rahul.code@gmail.com",
   cv: "/cv",
@@ -32,6 +32,22 @@ export type Project = {
 }
 
 export const PROJECTS: Project[] = [
+  {
+    name: "Repo Mind",
+    description:
+      "Agentic AI system that autonomously analyzes GitHub repositories using LangChain agents, multi-step reasoning, and tool orchestration. Includes a RAG pipeline with Pinecone, Google Generative AI embeddings, and PostgreSQL-backed persistent memory.",
+    url: "https://repo-mind-rose.vercel.app/dashboard",
+    tech: [
+      "Python",
+      "FastAPI",
+      "LangGraph",
+      "LangChain",
+      "Groq",
+      "Pinecone",
+      "PostgreSQL",
+    ],
+    status: "2026",
+  },
   {
     name: "Code Master",
     description:
@@ -66,14 +82,6 @@ export const PROJECTS: Project[] = [
     status: "2025",
   },
   {
-    name: "Short It",
-    description:
-      "URL shortener with JWT-based authentication, a real-time analytics dashboard, and a responsive mobile-first UI deployed on Vercel.",
-    url: "https://shortit-tan.vercel.app/",
-    tech: ["React.js", "Node.js", "MongoDB", "JWT", "Vercel"],
-    status: "2025",
-  },
-  {
     name: "AI Quiz App",
     description:
       "AI-powered quiz generation backend using Google Gemini API with submission tracking, result evaluation, and user progress analytics.",
@@ -97,8 +105,12 @@ export const CV_SKILLS = [
     items: ["Node.js", "Express.js", "FastAPI", "REST APIs"],
   },
   {
+    label: "AI/ML",
+    items: ["LangChain", "LangGraph", "RAG", "Vector Databases", "Agentic AI"],
+  },
+  {
     label: "Databases",
-    items: ["MongoDB", "PostgreSQL", "Redis", "Prisma ORM"],
+    items: ["MongoDB", "PostgreSQL", "Redis", "Prisma ORM", "Pinecone"],
   },
   {
     label: "State & Validation",

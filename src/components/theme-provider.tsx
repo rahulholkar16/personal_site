@@ -21,7 +21,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("system")
 
   useEffect(() => {
-    setThemeState(getStoredTheme())
+    const id = window.setTimeout(() => {
+      setThemeState(getStoredTheme())
+    }, 0)
+
+    return () => window.clearTimeout(id)
   }, [])
 
   useEffect(() => {

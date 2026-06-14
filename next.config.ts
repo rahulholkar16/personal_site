@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
         hostname: "ankitmohanty.vercel.app",
         pathname: "/_next/static/media/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.simpleicons.org",
+      },
     ],
     qualities: [75, 80, 85],
   },

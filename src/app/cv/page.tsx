@@ -1,14 +1,20 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { PrintButton } from "@/components/print-button"
-import { CV_EDUCATION, CV_SKILLS, PROJECTS, SITE } from "@/lib/constants"
+import {
+  ACHIEVEMENTS,
+  CV_EDUCATION,
+  CV_SKILLS,
+  PROJECTS,
+  SITE,
+} from "@/lib/constants"
 import Image from "next/image"
 import meImg from "@/../public/me.jpeg";
 
 export const metadata: Metadata = {
   title: `CV — ${SITE.name}`,
   description:
-    "Curriculum vitae for Rahul Pal — Full Stack Developer based in Noida, India.",
+    "Curriculum vitae for Rahul Pal — Full Stack AI Developer based in Noida, India.",
   alternates: { canonical: `${SITE.url}/cv` },
   openGraph: {
     type: "profile",
@@ -64,7 +70,7 @@ export default function CvPage() {
                   </h1>
                   <p className="text-lg text-(--color-text-secondary) mb-2">
                       <span className="display-italic">
-                          Full Stack Developer
+                          Full Stack AI Developer
                       </span>{" "}
                       focused on building scalable, user-first products.
                   </p>
@@ -189,23 +195,7 @@ export default function CvPage() {
           <section className="mb-4">
               <CvSection label="Achievements & Leadership" number="04" />
               <ul className="space-y-3">
-                  {[
-                      {
-                          title: "Hackathon Team Lead (SIH)",
-                          description:
-                              "Led cross-functional teams in the Smart India Hackathon, driving product ideation, technical execution, and live demos under time-constrained environments.",
-                      },
-                      {
-                          title: "Open Source Contributor",
-                          description:
-                              "Actively contribute to open-source repositories on GitHub, aligning with industry best practices.",
-                      },
-                      {
-                          title: "Public Speaker",
-                          description:
-                              "Presented technical projects and architecture decisions to academic panels and peer audiences.",
-                      },
-                  ].map((item) => (
+                  {ACHIEVEMENTS.map((item) => (
                       <li
                           key={item.title}
                           className="flex gap-2 text-sm text-(--color-text-secondary)"
