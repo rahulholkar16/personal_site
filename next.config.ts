@@ -6,11 +6,6 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "ankitmohanty.vercel.app",
-        pathname: "/_next/static/media/**",
-      },
-      {
-        protocol: "https",
         hostname: "cdn.simpleicons.org",
       },
     ],
