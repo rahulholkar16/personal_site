@@ -22,6 +22,16 @@ export const SOCIALS = [
   },
 ] as const
 
+export const EXPERIENCE = [
+  {
+    role: "Full Stack Intern",
+    company: "CloudTrains Global",
+    period: "JUNE 2026 — Present",
+    description:
+      "Contributing to full-stack web development and gaining hands-on experience building reliable, user-focused products in a collaborative team environment.",
+  },
+] as const
+
 export type Project = {
   name: string
   description: string
