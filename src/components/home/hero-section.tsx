@@ -20,7 +20,8 @@ export function HeroSection() {
                             Full Stack AI
                         </span>
                         <br />
-                        Developer<span className="text-(--color-accent)">.</span>
+                        Developer
+                        <span className="text-(--color-accent)">.</span>
                     </h1>
 
                     <p className="fade-up delay-3 text-base sm:text-lg text-(--color-text-secondary) leading-relaxed max-w-md mb-6">
@@ -54,7 +55,9 @@ export function HeroSection() {
                                 ↗
                             </span>
                         </a>
-                        <span className="hidden sm:inline text-(--color-border)">/</span>
+                        <span className="hidden sm:inline text-(--color-border)">
+                            /
+                        </span>
                         {SOCIALS.map((social) => (
                             <a
                                 key={social.name}
