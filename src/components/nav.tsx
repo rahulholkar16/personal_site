@@ -7,6 +7,7 @@ import profileImg from "@/../public/profile.jpg";
 import { ThemeToggle } from "./theme-toggle";
 
 const LINKS = [
+    { href: "/#experience", label: "experience" },
     { href: "/#projects", label: "projects" },
     { href: "/uses", label: "uses" },
     { href: "/cv", label: "cv" },

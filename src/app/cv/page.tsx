@@ -5,6 +5,7 @@ import {
   ACHIEVEMENTS,
   CV_EDUCATION,
   CV_SKILLS,
+  EXPERIENCE,
   PROJECTS,
   SITE,
 } from "@/lib/constants"
@@ -108,9 +109,37 @@ export default function CvPage() {
               </div>
           </header>
 
+          {/* Experience */}
+          <section className="mb-12">
+              <CvSection label="Experience" number="01" />
+              <div className="space-y-6">
+                  {EXPERIENCE.map((experience) => (
+                      <div
+                          key={`${experience.company}-${experience.role}`}
+                          className="cv-block"
+                      >
+                          <div className="flex flex-wrap items-baseline justify-between gap-x-4 mb-1">
+                              <h3 className="display text-xl text-(--color-text)">
+                                  {experience.role}
+                              </h3>
+                              <span className="font-mono text-[10px] uppercase tracking-wider text-(--color-text-muted)">
+                                  {experience.period}
+                              </span>
+                          </div>
+                          <p className="text-sm font-medium text-(--color-text) mb-1">
+                              {experience.company}
+                          </p>
+                          <p className="text-sm text-(--color-text-secondary) leading-relaxed">
+                              {experience.description}
+                          </p>
+                      </div>
+                  ))}
+              </div>
+          </section>
+
           {/* Selected Projects */}
           <section className="mb-12">
-              <CvSection label="Selected Projects" number="01" />
+              <CvSection label="Selected Projects" number="02" />
               <div className="space-y-6">
                   {PROJECTS.map((project) => (
                       <div key={project.name} className="cv-block">
@@ -149,7 +178,7 @@ export default function CvPage() {
 
           {/* Skills */}
           <section className="mb-12">
-              <CvSection label="Technical Skills" number="02" />
+              <CvSection label="Technical Skills" number="03" />
               <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3">
                   {CV_SKILLS.map((group) => (
                       <div key={group.label} className="flex gap-3">
@@ -166,7 +195,7 @@ export default function CvPage() {
 
           {/* Education */}
           <section className="mb-12">
-              <CvSection label="Education" number="03" />
+              <CvSection label="Education" number="04" />
               <div className="space-y-5">
                   {CV_EDUCATION.map((edu) => (
                       <div key={edu.title} className="cv-block">
@@ -193,7 +222,7 @@ export default function CvPage() {
 
           {/* Achievements */}
           <section className="mb-4">
-              <CvSection label="Achievements & Leadership" number="04" />
+              <CvSection label="Achievements & Leadership" number="05" />
               <ul className="space-y-3">
                   {ACHIEVEMENTS.map((item) => (
                       <li
