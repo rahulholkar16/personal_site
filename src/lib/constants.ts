@@ -27,8 +27,7 @@ export const EXPERIENCE = [
     role: "Full Stack Intern",
     company: "CloudTrains Global",
     period: "JUNE 2026 — Present",
-    description:
-      "Contributing to full-stack web development and gaining hands-on experience building reliable, user-focused products in a collaborative team environment.",
+    description: "Contributing to full-stack development of the CloudTrain Global site, building reliable, user-focused features in a collaborative team environment.",
   },
 ] as const
 
