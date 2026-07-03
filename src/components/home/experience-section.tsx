@@ -5,7 +5,7 @@ export function ExperienceSection() {
     return (
         <section
             id="experience"
-            className="max-w-5xl mx-auto px-6 py-16 sm:py-20"
+            className="max-w-5xl mx-auto px-6 py-10 sm:py-10"
         >
             <SectionLabel number="02">Experience</SectionLabel>
             <div>
